@@ -10,7 +10,7 @@
 
   FORMAT_MARK_HTML = '<span class="odometer-formatting-mark"></span>';
 
-  DIGIT_FORMAT = '(ddd).dd';
+  DIGIT_FORMAT = '(,ddd).dd';
 
   FORMAT_PARSER = /^\(?([^)]*)\)?(?:(.)(d+))?$/;
 
@@ -545,13 +545,10 @@
           frame = frames[j];
           numEl = document.createElement('div');
           numEl.className = 'odometer-value';
-
-          console.log('i:%d j:%d frame:%d frames.length:%d',i,j,frame, frames.length);
-
+          numEl.innerHTML = frame;
           if ((j === 0) && (frame === 0)) {
             addClass(numEl, 'odometer-hidden');
-          }          
-          numEl.innerHTML = frame;
+          }  
           this.ribbons[i].appendChild(numEl);
           if (j === frames.length - 1) {
             addClass(numEl, 'odometer-last-value');
