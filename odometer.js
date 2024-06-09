@@ -546,9 +546,6 @@
           numEl = document.createElement('div');
           numEl.className = 'odometer-value';
           numEl.innerHTML = frame;
-          if ((j === 0) && (frame === 0)) {
-            addClass(numEl, 'odometer-hidden');
-          }  
           this.ribbons[i].appendChild(numEl);
           if (j === frames.length - 1) {
             addClass(numEl, 'odometer-last-value');
